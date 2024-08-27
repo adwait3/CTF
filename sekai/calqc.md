@@ -26,3 +26,7 @@ where
 
 // output matching function names
 select g, "called " + g.getName()
+```
+
+ref
+>https://boxmein.github.io/posts/2024-08-25-sekaictf-2024/
