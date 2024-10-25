@@ -5,9 +5,9 @@ See if you can uncover any hidden information in this image. Submit the flag as 
 
 this challenge basically involved a png image which had a mp3 file which needed to be extraced and the flag was in the lsb of the mp3 file
 
-> first we see that the png in hex ed has ID# in the end which indicated our mpr , we extract this audio file
-> `dd if=electricsoldiers.png of=outfile bs=1 skip=1700017`
-> afterwards we use
+* first we see that the png in hex ed has ID# in the end which indicated our mpr , we extract this audio file
+* `dd if=electricsoldiers.png of=outfile bs=1 skip=1700017`
+* afterwards we use
 ```
 def extract_flag_from_mp3(stego_file, flag_length):
     # Read the stego PNG file
@@ -44,7 +44,7 @@ extracted_flag = extract_flag_from_mp3(stego_file, flag_length)
 print(f"Extracted Flag: {extracted_flag}")
 ```
 
-> our script to get the lsb data from the mp3 which gives the flag
+* our script to get the lsb data from the mp3 which gives the flag
 
 
 ------------------------------------------
@@ -61,10 +61,10 @@ Binary Conversion: The ternary numbers are converted into binary numbers. Binary
 
 Plaintext: Finally, the binary numbers are converted into letters and symbols to reveal the secret message.
 
-> in th email we find a large whhitespace
-> checking it we find U+200A, U+2002, and U+2009 unicode characters in there.
-> we convert unicode to ternary ie, determine the right values and replace them with 0, 1, and 2.
-> we convert ternary to binary using
+* in th email we find a large whhitespace
+* checking it we find U+200A, U+2002, and U+2009 unicode characters in there.
+* we convert unicode to ternary ie, determine the right values and replace them with 0, 1, and 2.
+* we convert ternary to binary using
 ```
 import sys
 
@@ -90,4 +90,4 @@ if __name__ == "__main__":
         print("Invalid ternary value. Please provide a valid ternary number.")
 ```
 
->we convert binary to readable and get the flag. 
+* we convert binary to readable and get the flag. 
